@@ -3,10 +3,10 @@
 [![Docker Repository on Quay](https://quay.io/repository/external_storage/nfs-client-provisioner/status "Docker Repository on Quay")](https://quay.io/repository/external_storage/nfs-client-provisioner)
 
 
-`nfs-client` is an automatic provisioner that used your *already configured* NFS server, automatically creating Persistent Volumes.
+`nfs-client` is an automatic provisioner that used your *already configured* NFS server, automatically creating Persistent Volumes. It works very well [Google Cloud Filestore](https://cloud.google.com/sdk/gcloud/reference/beta/filestore/), here is a blog [post](https://rimusz.net/how-to-use-google-cloud-filestore-with-gke/) how to use it with GKE.
 
-- Persistent volumes are provisioned as ${namespace}-${pvcName}-${pvName}
-- Persistent volumes which are recycled as archieved-${namespace}-${pvcName}-${pvName}
+- Persistent volumes are provisioned as `${namespace}-${pvcName}-${pvName}`
+- Persistent volumes which are recycled as `archieved-${namespace}-${pvcName}-${pvName}`
 
 # How to deploy nfs-client to your cluster.
 
