@@ -56,16 +56,6 @@ clusterrole "nfs-client-provisioner-runner" created
 clusterrolebinding "run-nfs-client-provisioner" created
 ```
 
-OpenShift:
-
-```sh
-$ oc create -f deploy/auth/openshift-clusterrole.yaml -f deploy/auth/serviceaccount.yaml
-serviceaccount "nfs-client-provisioner" created
-clusterrole "nfs-client-provisioner-runner" created
-$ oadm policy add-scc-to-user hostmount-anyuid system:serviceaccount:default:nfs-client-provisioner
-$ oadm policy add-cluster-role-to-user nfs-client-provisioner-runner system:serviceaccount:default:nfs-client-provisioner
-```
-
 3. Finally, test your environment!
 
 Now we'll test your NFS provisioner.
