@@ -35,11 +35,11 @@
 
 [[constraint]]
   name = "k8s.io/api"
-  version = "1.10.0"
+  version = "1.11.0"
 
 [[constraint]]
   name = "k8s.io/apimachinery"
-  version = "1.10.0"
+  version = "1.11.0"
 
 [[constraint]]
   name = "k8s.io/client-go"
