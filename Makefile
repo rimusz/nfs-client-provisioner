@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+VERSION ?= 2.1.0
+
 ifeq ($(REGISTRY),)
         REGISTRY = quay.io/rimusz/
 endif
@@ -21,7 +23,7 @@ endif
 IMAGE = $(REGISTRY)nfs-client-provisioner:$(VERSION)
 MUTABLE_IMAGE = $(REGISTRY)nfs-client-provisioner:latest
 
-all: build image
+all: build image push
 
 container: build image
 
@@ -35,4 +37,3 @@ image:
 push:
 	docker push $(IMAGE)
 	docker push $(MUTABLE_IMAGE)
-
