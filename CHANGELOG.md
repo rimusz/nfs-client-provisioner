@@ -1,3 +1,6 @@
+# v2.1.0
+- Change PVC archive to delete the actual NFS folder
+
 # v2.0.1
 - Add support for ARM (Raspberry PI). Image at `quay.io/external_storage/nfs-client-provisioner-arm`. (https://github.com/kubernetes-incubator/external-storage/pull/275)
 

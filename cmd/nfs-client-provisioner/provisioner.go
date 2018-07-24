@@ -95,10 +95,9 @@ func (p *nfsProvisioner) Provision(options controller.VolumeOptions) (*v1.Persis
 func (p *nfsProvisioner) Delete(volume *v1.PersistentVolume) error {
 	path := volume.Spec.PersistentVolumeSource.NFS.Path
 	pvName := filepath.Base(path)
-	oldPath := filepath.Join(mountPath, pvName)
-	archivePath := filepath.Join(mountPath, "archived-"+pvName)
-	glog.V(4).Infof("archiving path %s to %s", oldPath, archivePath)
-	return os.Rename(oldPath, archivePath)
+	volumePath := filepath.Join(mountPath, pvName)
+	glog.V(4).Infof("deleting path %s", volumePath)
+	return os.RemoveAll(volumePath)
 }
 
 func main() {
@@ -140,8 +139,7 @@ func main() {
 		server: server,
 		path:   path,
 	}
-	// Start the provision controller which will dynamically provision efs NFS
-	// PVs
+	// Start the provision controller which will dynamically provision NFS PVs
 	pc := controller.NewProvisionController(clientset, provisionerName, clientNFSProvisioner, serverVersion.GitVersion)
 	pc.Run(wait.NeverStop)
 }

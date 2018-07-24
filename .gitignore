@@ -22,3 +22,6 @@ _testmain.go
 *.exe
 *.test
 *.prof
+
+#
+docker/x86_64/nfs-client-provisioner
