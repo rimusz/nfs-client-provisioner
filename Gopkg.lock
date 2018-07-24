@@ -249,7 +249,6 @@
   version = "v2.2.1"
 
 [[projects]]
-  branch = "master"
   name = "k8s.io/api"
   packages = [
     "admissionregistration/v1alpha1",
@@ -282,10 +281,11 @@
     "storage/v1alpha1",
     "storage/v1beta1"
   ]
-  revision = "183f3326a9353bd6d41430fc80f96259331d029c"
+  revision = "072894a440bdee3a891dea811fe42902311cd2a3"
+  version = "kubernetes-1.11.0"
 
 [[projects]]
-  branch = "master"
+  branch = "release-1.11"
   name = "k8s.io/apimachinery"
   packages = [
     "pkg/api/errors",
@@ -317,7 +317,6 @@
     "pkg/util/intstr",
     "pkg/util/json",
     "pkg/util/mergepatch",
-    "pkg/util/naming",
     "pkg/util/net",
     "pkg/util/runtime",
     "pkg/util/sets",
@@ -332,7 +331,7 @@
     "third_party/forked/golang/json",
     "third_party/forked/golang/reflect"
   ]
-  revision = "cbafd24d5796966031ae904aa88e2436a619ae8a"
+  revision = "103fd098999dc9c0c88536f5c9ad2e5da39373ae"
 
 [[projects]]
   name = "k8s.io/client-go"
@@ -414,6 +413,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "21aad950115f64a5d16eca2928bca2705eac0996ccf7aef54e4e79d3255f20db"
+  inputs-digest = "b3a0a8eee9a88ca123777be69c8c126c5030af713064f82c5de0ffaf86b7ea64"
   solver-name = "gps-cdcl"
   solver-version = 1
