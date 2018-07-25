@@ -68,11 +68,13 @@ $ kubectl create -f deploy/test-claim.yaml -f deploy/test-pod.yaml
 
 Now check your NFS Server for the file `SUCCESS`.
 
+Delete:
+
 ```sh
-kubectl delete -f deploy/test-pod.yaml -f deploy/test-claim.yaml
+$ kubectl delete -f deploy/test-pod.yaml -f deploy/test-claim.yaml
 ```
 
-Now check the folder renamed to `archived-???`.
+The PVC folder created on NFS server got deleted.
 
 4. Deploying your own PersistentVolumeClaim
 
